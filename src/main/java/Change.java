@@ -30,7 +30,7 @@ public class Change {
       Integer[] changeArray = Change.changeCalculator(cents, till);
       String changeWords = Change.prettyOutput(changeArray);
       String remainingTillWords = Change.prettyOutput(till);
-      String fullOutput = "Your change for " + cents + " cents will be " + changeWords + ". Your till will contain " + remainingTillWords + ". Have a nice day!";
+      String fullOutput = "Your change for " + cents + " cents will be " + changeWords + ". Your till now contains " + remainingTillWords + ". Have a nice day!";
       model.put("tillOutput", tillWords);
       model.put("cents", cents);
       model.put("outputString", fullOutput);
@@ -41,25 +41,15 @@ public class Change {
 
   public static Integer[] changeCalculator(Integer pennies, Integer[] tillContents) {
     Integer[] changeArray = {0, 0, 0, 0}; //quarters, dimes, nickels, pennies
-    while (pennies >= 25 && tillContents[0] > 0) {
-      changeArray[0] += 1;
-      pennies -= 25;
-      tillContents[0]--;
-    }
-    while (pennies >= 10 && tillContents[1] > 0) {
-      changeArray[1] += 1;
-      pennies -= 10;
-      tillContents[1]--;
-    }
-    while (pennies >= 5 && tillContents[2] > 0) {
-      changeArray[2] += 1;
-      pennies -= 5;
-      tillContents[2]--;
-    }
-    while (pennies > 0 && tillContents[3] > 0) {
-      changeArray[3] += 1;
-      pennies -= 1;
-      tillContents[3]--;
+
+    Integer[] denominations = {25,10,5,1};
+
+    for(Integer i = 0 ; i < denominations.length; i++) {
+      while(pennies >= denominations[i] && tillContents[i] > 0) {
+        changeArray[i] += 1;
+        pennies -= denominations[i];
+        tillContents[i]--;
+      }
     }
     return changeArray;
   }

@@ -73,7 +73,7 @@ public class ChangeTest extends FluentTest {
   public void prettyOutput_convertArrayTo_DescriptiveString() {
     Change testChange = new Change();
     Integer[] change = {2, 1, 1, 4};
-    String prettyTest = "two quarters, one dime, one nickel, and four pennies.";
+    String prettyTest = "two quarters, one dime, one nickel, and four pennies";
     assertEquals(prettyTest, testChange.prettyOutput(change));
   }
 
