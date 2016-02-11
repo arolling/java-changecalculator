@@ -33,21 +33,26 @@ public class Change {
 
   public static Integer[] changeCalculator(Integer pennies) {
     Integer[] changeArray = {0, 0, 0, 0};
-    while (pennies >= 25) {
+    Integer[] tillContents = {100, 0, 0, 100}; //quarters, dimes, nickels, pennies
+    while (pennies >= 25 && tillContents[0] > 0) {
       changeArray[0] += 1;
       pennies -= 25;
+      tillContents[0]--;
     }
-    while (pennies >= 10) {
+    while (pennies >= 10 && tillContents[1] > 0) {
       changeArray[1] += 1;
       pennies -= 10;
+      tillContents[1]--;
     }
-    while (pennies >= 5) {
+    while (pennies >= 5 && tillContents[2] > 0) {
       changeArray[2] += 1;
       pennies -= 5;
+      tillContents[2]--;
     }
-    while (pennies > 0) {
+    while (pennies > 0 && tillContents[3] > 0) {
       changeArray[3] += 1;
       pennies -= 1;
+      tillContents[3]--;
     }
     return changeArray;
   }
