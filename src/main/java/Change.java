@@ -51,6 +51,19 @@ public class Change {
         tillContents[i]--;
       }
     }
+    if (pennies > 12) {
+      changeArray[0] += 1;
+      pennies = 0;
+      tillContents[0]--;
+    } else if (pennies > 5 && tillContents[1] > 0) {
+      changeArray[1] += 1;
+      pennies = 0;
+      tillContents[1]--;
+    } else if (pennies > 2 && tillContents[2] > 0) {
+      changeArray[2] += 1;
+      pennies = 0;
+      tillContents[2]--;
+    }
     return changeArray;
   }
 

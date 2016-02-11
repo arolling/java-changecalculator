@@ -1,32 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ChangeTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2016-02-11T21:28:05" hostname="epicodus-66.local" time="0.284">
+<testsuite name="ChangeTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2016-02-11T21:44:34" hostname="epicodus-66.local" time="0.297">
   <properties/>
   <testcase name="prettyOutput_convertArrayTo_DescriptiveString" classname="ChangeTest" time="0.003"/>
-  <testcase name="changeCalculator_convertsSixtyPenniesTo_TwoQuarterOneDime" classname="ChangeTest" time="0.001"/>
+  <testcase name="changeCalculator_convertsSixtyPenniesTo_TwoQuarterOneDime" classname="ChangeTest" time="0.002"/>
   <testcase name="changeCalculator_convertsSixtyFiveTo_TwoQuarterOneDimeOneNickel" classname="ChangeTest" time="0.0"/>
-  <testcase name="rootTest" classname="ChangeTest" time="0.25"/>
+  <testcase name="changeCalculator_handlesRunningOutOfPenniesNickels_OneQuarterTwoDimes" classname="ChangeTest" time="0.001"/>
+  <testcase name="rootTest" classname="ChangeTest" time="0.249"/>
+  <testcase name="changeCalculator_handlesRunningOutOfPennies_OneQuarterOneDimeTwoNickels" classname="ChangeTest" time="0.0"/>
   <testcase name="changeCalculator_handlesRunningOutOfQuarters_ThreeDimesFourPennies" classname="ChangeTest" time="0.0"/>
-  <testcase name="changeCalculator_handlesRunningOutOfNickelsAndDimes_OneQuarterSixteenPennies" classname="ChangeTest" time="0.0"/>
-  <testcase name="changeCalculator_convertsTwentyfivePenniesTo_OneQuarter" classname="ChangeTest" time="0.0"/>
+  <testcase name="changeCalculator_handlesRunningOutOfNickelsAndDimes_OneQuarterSixteenPennies" classname="ChangeTest" time="0.001"/>
+  <testcase name="changeCalculator_convertsTwentyfivePenniesTo_OneQuarter" classname="ChangeTest" time="0.001"/>
   <testcase name="changeCalculator_convertsSixtyNineTo_TwoQuarterOneDimeOneNickelFourPennies" classname="ChangeTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[[Thread-4] INFO spark.webserver.SparkServer - == Spark has ignited ...
 [Thread-4] INFO spark.webserver.SparkServer - >> Listening on 0.0.0.0:4567
 [Thread-4] INFO org.eclipse.jetty.server.Server - jetty-9.0.2.v20130417
-[Thread-4] INFO org.eclipse.jetty.server.ServerConnector - Started ServerConnector@1a61f7c8{HTTP/1.1}{0.0.0.0:4567}
-Feb 11, 2016 1:28:05 PM com.gargoylesoftware.htmlunit.html.InputElementFactory createElementNS
+[Thread-4] INFO org.eclipse.jetty.server.ServerConnector - Started ServerConnector@7d96df24{HTTP/1.1}{0.0.0.0:4567}
+Feb 11, 2016 1:44:34 PM com.gargoylesoftware.htmlunit.html.InputElementFactory createElementNS
 INFO: Bad input type: "number", creating a text input
-Feb 11, 2016 1:28:05 PM com.gargoylesoftware.htmlunit.html.InputElementFactory createElementNS
+Feb 11, 2016 1:44:34 PM com.gargoylesoftware.htmlunit.html.InputElementFactory createElementNS
 INFO: Bad input type: "number", creating a text input
-Feb 11, 2016 1:28:05 PM com.gargoylesoftware.htmlunit.html.InputElementFactory createElementNS
+Feb 11, 2016 1:44:34 PM com.gargoylesoftware.htmlunit.html.InputElementFactory createElementNS
 INFO: Bad input type: "number", creating a text input
-Feb 11, 2016 1:28:05 PM com.gargoylesoftware.htmlunit.html.InputElementFactory createElementNS
+Feb 11, 2016 1:44:35 PM com.gargoylesoftware.htmlunit.html.InputElementFactory createElementNS
 INFO: Bad input type: "number", creating a text input
-Feb 11, 2016 1:28:05 PM com.gargoylesoftware.htmlunit.html.InputElementFactory createElementNS
+Feb 11, 2016 1:44:35 PM com.gargoylesoftware.htmlunit.html.InputElementFactory createElementNS
 INFO: Bad input type: "number", creating a text input
 [Test worker] INFO spark.webserver.SparkServer - >>> Spark shutting down ...
-[Test worker] INFO org.eclipse.jetty.server.Server - Graceful shutdown org.eclipse.jetty.server.Server@692a370a by 
-[Test worker] INFO org.eclipse.jetty.server.ServerConnector - Stopped ServerConnector@1a61f7c8{HTTP/1.1}{0.0.0.0:4567}
+[Test worker] INFO org.eclipse.jetty.server.Server - Graceful shutdown org.eclipse.jetty.server.Server@54f3dd84 by 
+[Test worker] INFO org.eclipse.jetty.server.ServerConnector - Stopped ServerConnector@7d96df24{HTTP/1.1}{0.0.0.0:4567}
 [Test worker] INFO spark.webserver.SparkServer - done
 ]]></system-err>
 </testsuite>

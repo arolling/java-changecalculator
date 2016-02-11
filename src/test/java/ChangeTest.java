@@ -70,6 +70,22 @@ public class ChangeTest extends FluentTest {
   }
 
   @Test
+  public void changeCalculator_handlesRunningOutOfPennies_OneQuarterOneDimeTwoNickels() {
+    Change testChange = new Change();
+    Integer[] change = {1, 1, 2, 0};
+    Integer[] tillContents = {100, 100, 100, 0};
+    assertEquals(change, testChange.changeCalculator(44, tillContents));
+  }
+
+  @Test
+  public void changeCalculator_handlesRunningOutOfPenniesNickels_OneQuarterTwoDimes() {
+    Change testChange = new Change();
+    Integer[] change = {1, 2, 0, 0};
+    Integer[] tillContents = {100, 100, 0, 0};
+    assertEquals(change, testChange.changeCalculator(44, tillContents));
+  }
+
+  @Test
   public void prettyOutput_convertArrayTo_DescriptiveString() {
     Change testChange = new Change();
     Integer[] change = {2, 1, 1, 4};
