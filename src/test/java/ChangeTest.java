@@ -28,6 +28,34 @@ public class ChangeTest extends FluentTest {
     assertEquals(change, testChange.changeCalculator(25));
   }
 
+  @Test
+  public void changeCalculator_convertsSixtyPenniesTo_TwoQuarterOneDime() {
+    Change testChange = new Change();
+    Integer[] change = {2, 1, 0, 0};
+    assertEquals(change, testChange.changeCalculator(60));
+  }
+
+  @Test
+  public void changeCalculator_convertsSixtyFiveTo_TwoQuarterOneDimeOneNickel() {
+    Change testChange = new Change();
+    Integer[] change = {2, 1, 1, 0};
+    assertEquals(change, testChange.changeCalculator(65));
+  }
+
+  @Test
+  public void changeCalculator_convertsSixtyNineTo_TwoQuarterOneDimeOneNickelFourPennies() {
+    Change testChange = new Change();
+    Integer[] change = {2, 1, 1, 4};
+    assertEquals(change, testChange.changeCalculator(69));
+  }
+
+  @Test
+  public void prettyOutput_convertArrayTo_DescriptiveString() {
+    Change testChange = new Change();
+    Integer[] change = {2, 1, 1, 4};
+    String prettyTest = "will be two quarters, one dime, one nickel, and four pennies.";
+    assertEquals(prettyTest, testChange.prettyOutput(change));
+  }
 
   //Integration testing
     // @Test

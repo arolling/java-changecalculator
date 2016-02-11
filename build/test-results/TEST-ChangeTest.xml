@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ChangeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-02-11T17:05:05" hostname="epicodus-66.local" time="0.003">
+<testsuite name="ChangeTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2016-02-11T18:14:28" hostname="epicodus-66.local" time="0.023">
   <properties/>
-  <testcase name="changeCalculator_convertsTwentyfivePenniesTo_OneQuarter" classname="ChangeTest" time="0.003"/>
+  <testcase name="prettyOutput_convertArrayTo_DescriptiveString" classname="ChangeTest" time="0.003"/>
+  <testcase name="changeCalculator_convertsSixtyPenniesTo_TwoQuarterOneDime" classname="ChangeTest" time="0.001"/>
+  <testcase name="changeCalculator_convertsSixtyFiveTo_TwoQuarterOneDimeOneNickel" classname="ChangeTest" time="0.0"/>
+  <testcase name="changeCalculator_convertsTwentyfivePenniesTo_OneQuarter" classname="ChangeTest" time="0.0"/>
+  <testcase name="changeCalculator_convertsSixtyNineTo_TwoQuarterOneDimeOneNickelFourPennies" classname="ChangeTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
