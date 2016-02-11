@@ -21,53 +21,59 @@ public class ChangeTest extends FluentTest {
   public static ServerRule server = new ServerRule();
 
 // Unit testing
-  // @Test
-  // public void changeCalculator_convertsTwentyfivePenniesTo_OneQuarter() {
-  //   Change testChange = new Change();
-  //   Integer[] change = {1, 0, 0, 0};
-  //   assertEquals(change, testChange.changeCalculator(25));
-  // }
-  //
-  // @Test
-  // public void changeCalculator_convertsSixtyPenniesTo_TwoQuarterOneDime() {
-  //   Change testChange = new Change();
-  //   Integer[] change = {2, 1, 0, 0};
-  //   assertEquals(change, testChange.changeCalculator(60));
-  // }
-  //
-  // @Test
-  // public void changeCalculator_convertsSixtyFiveTo_TwoQuarterOneDimeOneNickel() {
-  //   Change testChange = new Change();
-  //   Integer[] change = {2, 1, 1, 0};
-  //   assertEquals(change, testChange.changeCalculator(65));
-  // }
-  //
-  // @Test
-  // public void changeCalculator_convertsSixtyNineTo_TwoQuarterOneDimeOneNickelFourPennies() {
-  //   Change testChange = new Change();
-  //   Integer[] change = {2, 1, 1, 4};
-  //   assertEquals(change, testChange.changeCalculator(69));
-  // }
+  @Test
+  public void changeCalculator_convertsTwentyfivePenniesTo_OneQuarter() {
+    Change testChange = new Change();
+    Integer[] change = {1, 0, 0, 0};
+    Integer[] tillContents = {100, 100, 100, 100};
+    assertEquals(change, testChange.changeCalculator(25, tillContents));
+  }
 
-  // @Test
-  // public void changeCalculator_handlesRunningOutOfQuarters_ThreeDimesFourPennies() {
-  //   Change testChange = new Change();
-  //   Integer[] change = {0, 3, 0, 4};
-  //   assertEquals(change, testChange.changeCalculator(34));
-  // }
+  @Test
+  public void changeCalculator_convertsSixtyPenniesTo_TwoQuarterOneDime() {
+    Change testChange = new Change();
+    Integer[] change = {2, 1, 0, 0};
+    Integer[] tillContents = {100, 100, 100, 100};
+    assertEquals(change, testChange.changeCalculator(60, tillContents));
+  }
+
+  @Test
+  public void changeCalculator_convertsSixtyFiveTo_TwoQuarterOneDimeOneNickel() {
+    Change testChange = new Change();
+    Integer[] change = {2, 1, 1, 0};
+    Integer[] tillContents = {100, 100, 100, 100};
+    assertEquals(change, testChange.changeCalculator(65, tillContents));
+  }
+
+  @Test
+  public void changeCalculator_convertsSixtyNineTo_TwoQuarterOneDimeOneNickelFourPennies() {
+    Change testChange = new Change();
+    Integer[] change = {2, 1, 1, 4};
+    Integer[] tillContents = {100, 100, 100, 100};
+    assertEquals(change, testChange.changeCalculator(69, tillContents));
+  }
+
+  @Test
+  public void changeCalculator_handlesRunningOutOfQuarters_ThreeDimesFourPennies() {
+    Change testChange = new Change();
+    Integer[] change = {0, 3, 0, 4};
+    Integer[] tillContents = {0, 100, 100, 100};
+    assertEquals(change, testChange.changeCalculator(34, tillContents));
+  }
 
   @Test
   public void changeCalculator_handlesRunningOutOfNickelsAndDimes_OneQuarterSixteenPennies() {
     Change testChange = new Change();
     Integer[] change = {1, 0, 0, 16};
-    assertEquals(change, testChange.changeCalculator(41));
+    Integer[] tillContents = {100, 0, 0, 100};
+    assertEquals(change, testChange.changeCalculator(41, tillContents));
   }
 
   @Test
   public void prettyOutput_convertArrayTo_DescriptiveString() {
     Change testChange = new Change();
     Integer[] change = {2, 1, 1, 4};
-    String prettyTest = "will be two quarters, one dime, one nickel, and four pennies.";
+    String prettyTest = "two quarters, one dime, one nickel, and four pennies.";
     assertEquals(prettyTest, testChange.prettyOutput(change));
   }
 
@@ -78,11 +84,11 @@ public class ChangeTest extends FluentTest {
         assertThat(pageSource()).contains("Input the number of cents");
     }
 
-    @Test
-    public void fillFormTest() {
-        goTo("http://localhost:4567/change");
-        fill("#changeInput").with("33");
-        submit("#submit");
-        assertThat(pageSource()).contains("Your change for");
-    }
+    // @Test
+    // public void fillFormTest() {
+    //     goTo("http://localhost:4567/change");
+    //     fill("#changeInput").with("33");
+    //     submit("#submit");
+    //     assertThat(pageSource()).contains("Your change for");
+    // }
 }

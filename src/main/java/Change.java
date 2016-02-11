@@ -20,20 +20,27 @@ public class Change {
 
     get("/changeResult", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
-      Integer pennies = Integer.parseInt(request.queryParams("changeInput"));
-      Integer[] changeArray = Change.changeCalculator(pennies);
+      Integer cents = Integer.parseInt(request.queryParams("changeInput"));
+      Integer quarters = Integer.parseInt(request.queryParams("quarterInput"));
+      Integer dimes = Integer.parseInt(request.queryParams("dimeInput"));
+      Integer nickels = Integer.parseInt(request.queryParams("nickelInput"));
+      Integer pennies = Integer.parseInt(request.queryParams("pennyInput"));
+      Integer[] till = {quarters, dimes, nickels, pennies};
+      String tillWords = Change.prettyOutput(till);
+      Integer[] changeArray = Change.changeCalculator(cents, till);
       String changeWords = Change.prettyOutput(changeArray);
-      String fullOutput = "Your change for " + pennies + " cents " + changeWords + " Have a nice day!";
-      model.put("pennies", pennies);
+      String remainingTillWords = Change.prettyOutput(till);
+      String fullOutput = "Your change for " + cents + " cents will be " + changeWords + ". Your till will contain " + remainingTillWords + ". Have a nice day!";
+      model.put("tillOutput", tillWords);
+      model.put("cents", cents);
       model.put("outputString", fullOutput);
       model.put("template", "templates/changeResult.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
   }
 
-  public static Integer[] changeCalculator(Integer pennies) {
-    Integer[] changeArray = {0, 0, 0, 0};
-    Integer[] tillContents = {100, 0, 0, 100}; //quarters, dimes, nickels, pennies
+  public static Integer[] changeCalculator(Integer pennies, Integer[] tillContents) {
+    Integer[] changeArray = {0, 0, 0, 0}; //quarters, dimes, nickels, pennies
     while (pennies >= 25 && tillContents[0] > 0) {
       changeArray[0] += 1;
       pennies -= 25;
@@ -60,7 +67,7 @@ public class Change {
   public static String prettyOutput(Integer[] changeArray) { // changeArray = {2, 2, 1, 1}
     String[] coinArray = {"quarters", "dimes", "nickels", "pennies", "quarter", "dime", "nickel", "penny"};
     ArrayList<String> coinStrings = new ArrayList<String>();
-    String sentence = "will be %s, %s, %s, and %s.";
+    String sentence = "%s, %s, %s, and %s";
     for (int i = 0; i < changeArray.length; i++) {
       String numberWord = Change.getWord(changeArray[i]);
       if (changeArray[i] == 1) {
