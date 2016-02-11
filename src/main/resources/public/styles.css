@@ -1,0 +1,14 @@
+.banner {
+  background-color: #176E33;
+  color: #81D4CB;
+}
+
+.panel-default>.panel-heading {
+  background-color: #7A3854;
+  color: #81D4CB;
+}
+
+.panel-body {
+  background-color: #11A191;
+  color: #A11195;
+}

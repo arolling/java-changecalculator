@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ChangeTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-02-11T18:47:52" hostname="epicodus-66.local" time="0.264">
+<testsuite name="ChangeTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2016-02-11T18:52:28" hostname="epicodus-66.local" time="0.328">
   <properties/>
-  <testcase name="prettyOutput_convertArrayTo_DescriptiveString" classname="ChangeTest" time="0.002"/>
+  <testcase name="prettyOutput_convertArrayTo_DescriptiveString" classname="ChangeTest" time="0.004"/>
   <testcase name="changeCalculator_convertsSixtyPenniesTo_TwoQuarterOneDime" classname="ChangeTest" time="0.001"/>
   <testcase name="changeCalculator_convertsSixtyFiveTo_TwoQuarterOneDimeOneNickel" classname="ChangeTest" time="0.001"/>
-  <testcase name="rootTest" classname="ChangeTest" time="0.236"/>
+  <testcase name="fillFormTest" classname="ChangeTest" time="0.287"/>
+  <testcase name="rootTest" classname="ChangeTest" time="0.01"/>
   <testcase name="changeCalculator_convertsTwentyfivePenniesTo_OneQuarter" classname="ChangeTest" time="0.0"/>
-  <testcase name="changeCalculator_convertsSixtyNineTo_TwoQuarterOneDimeOneNickelFourPennies" classname="ChangeTest" time="0.001"/>
+  <testcase name="changeCalculator_convertsSixtyNineTo_TwoQuarterOneDimeOneNickelFourPennies" classname="ChangeTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[[Thread-4] INFO spark.webserver.SparkServer - == Spark has ignited ...
 [Thread-4] INFO spark.webserver.SparkServer - >> Listening on 0.0.0.0:4567
 [Thread-4] INFO org.eclipse.jetty.server.Server - jetty-9.0.2.v20130417
-[Thread-4] INFO org.eclipse.jetty.server.ServerConnector - Started ServerConnector@5fbd196e{HTTP/1.1}{0.0.0.0:4567}
-Feb 11, 2016 10:47:52 AM com.gargoylesoftware.htmlunit.html.InputElementFactory createElementNS
+[Thread-4] INFO org.eclipse.jetty.server.ServerConnector - Started ServerConnector@661e9bf6{HTTP/1.1}{0.0.0.0:4567}
+Feb 11, 2016 10:52:28 AM com.gargoylesoftware.htmlunit.html.InputElementFactory createElementNS
+INFO: Bad input type: "number", creating a text input
+Feb 11, 2016 10:52:28 AM com.gargoylesoftware.htmlunit.html.InputElementFactory createElementNS
 INFO: Bad input type: "number", creating a text input
 [Test worker] INFO spark.webserver.SparkServer - >>> Spark shutting down ...
-[Test worker] INFO org.eclipse.jetty.server.Server - Graceful shutdown org.eclipse.jetty.server.Server@7d7670c9 by 
-[Test worker] INFO org.eclipse.jetty.server.ServerConnector - Stopped ServerConnector@5fbd196e{HTTP/1.1}{0.0.0.0:4567}
+[Test worker] INFO org.eclipse.jetty.server.Server - Graceful shutdown org.eclipse.jetty.server.Server@17a87e0b by 
+[Test worker] INFO org.eclipse.jetty.server.ServerConnector - Stopped ServerConnector@661e9bf6{HTTP/1.1}{0.0.0.0:4567}
 [Test worker] INFO spark.webserver.SparkServer - done
 ]]></system-err>
 </testsuite>
