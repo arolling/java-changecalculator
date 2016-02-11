@@ -20,13 +20,18 @@ public class Change {
 
     get("/changeResult", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
-
+      Integer pennies = Integer.parseInt(request.queryParams("changeInput"));
+      Integer[] changeArray = Change.changeCalculator(pennies);
+      String changeWords = Change.prettyOutput(changeArray);
+      String fullOutput = "Your change for " + pennies + " cents " + changeWords + " Have a nice day!";
+      model.put("pennies", pennies);
+      model.put("outputString", fullOutput);
       model.put("template", "templates/changeResult.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
   }
 
-  public Integer[] changeCalculator(Integer pennies) {
+  public static Integer[] changeCalculator(Integer pennies) {
     Integer[] changeArray = {0, 0, 0, 0};
     while (pennies >= 25) {
       changeArray[0] += 1;
@@ -47,7 +52,7 @@ public class Change {
     return changeArray;
   }
 
-  public String prettyOutput(Integer[] changeArray) { // changeArray = {2, 2, 1, 1}
+  public static String prettyOutput(Integer[] changeArray) { // changeArray = {2, 2, 1, 1}
     String[] coinArray = {"quarters", "dimes", "nickels", "pennies", "quarter", "dime", "nickel", "penny"};
     ArrayList<String> coinStrings = new ArrayList<String>();
     String sentence = "will be %s, %s, %s, and %s.";

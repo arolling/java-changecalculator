@@ -58,9 +58,9 @@ public class ChangeTest extends FluentTest {
   }
 
   //Integration testing
-    // @Test
-    // public void rootTest() {
-    //     goTo("http://localhost:4567/");
-    //     assertThat(pageSource()).contains("Leap year detector");
-    // }
+    @Test
+    public void rootTest() {
+        goTo("http://localhost:4567/change");
+        assertThat(pageSource()).contains("Input the number of cents");
+    }
 }
