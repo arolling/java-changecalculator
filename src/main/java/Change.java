@@ -7,7 +7,24 @@ import spark.template.velocity.VelocityTemplateEngine;
 import static spark.Spark.*;
 
 public class Change {
-  public static void main(String[] args) {}
+  public static void main(String[] args) {
+    staticFileLocation("/public");
+    String layout = "templates/layout.vtl";
+
+    get("/change", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+
+      model.put("template", "templates/change.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/changeResult", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+
+      model.put("template", "templates/changeResult.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+  }
 
   public Integer[] changeCalculator(Integer pennies) {
     Integer[] changeArray = {0, 0, 0, 0};
